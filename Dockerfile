@@ -26,4 +26,3 @@ RUN chmod +x /*.sh
 
 EXPOSE 8080
 CMD ["/run.sh"]
-LABEL version="1.0"

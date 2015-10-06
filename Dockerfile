@@ -16,8 +16,8 @@ RUN wget -q https://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR_VERSION
     rm apache-tomcat-*.tar.gz && \
     mv apache-tomcat* tomcat
 
-RUN ["rm", "-fr", "/tomcat/webapps/ROOT"]
-ADD helloworld.war /tomcat/webapps/ROOT
+RUN rm -fr /tomcat/webapps/ROOT/*
+COPY helloworld.war /tomcat/webapps/ROOT
 
 ADD create_tomcat_admin_user.sh /create_tomcat_admin_user.sh
 ADD run.sh /run.sh
